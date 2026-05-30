@@ -1,129 +1,236 @@
-```html
 <html>
 <head>
-    <title>Contact Us</title>
+  <title>Contact Us</title>
 
-    <!-- Style Sheets -->
-    <link rel="stylesheet" href="/static/style.css">
-    <link rel="stylesheet" href="/static/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/bootstrap.min.css">
 
-    <style>
-        .contact-container {
-            width: 80%;
-            margin: auto;
-            margin-top: 40px;
-        }
+  <style>
+    .contact-hero {
+      background-image: url("/static/contact-hero.png");
+      background-size: cover;
+      background-position: center;
+      height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
 
-        .contact-card {
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-            background-color: white;
-        }
+    .hero-box {
+      background-color: rgba(255, 255, 255, 0.75);
+      padding: 35px 60px;
+      border-radius: 8px;
+    }
 
-        .contact-header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
+    .hero-box h1 {
+      font-size: 48px;
+      font-weight: bold;
+      color: #111;
+    }
 
-        .contact-header h1 {
-            color: darkturquoise;
-            font-weight: bold;
-        }
+    .contact-section {
+      width: 85%;
+      margin: 45px auto;
+      text-align: center;
+    }
 
-        .contact-info {
-            font-size: 18px;
-            line-height: 1.8;
-        }
+    .section-title {
+      color: teal;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
 
-        .contact-info strong {
-            color: #333;
-        }
-    </style>
+    .info-row {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-top: 35px;
+    }
+
+    .info-box {
+      width: 22%;
+      min-width: 200px;
+      padding: 20px;
+    }
+
+    .info-icon {
+      width: 65px;
+      height: 65px;
+      background-color: teal;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    .info-box h4 {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    .person-card {
+      width: 70%;
+      margin: 30px auto;
+      display: flex;
+      align-items: center;
+      text-align: left;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      padding: 20px;
+      background-color: white;
+    }
+
+    .person-card img {
+      width: 40%;
+      border-radius: 8px;
+      margin-right: 30px;
+    }
+
+    .person-details h3 {
+      font-weight: bold;
+    }
+
+    .person-details h5 {
+      color: teal;
+      margin-bottom: 20px;
+    }
+
+    .divider {
+      width: 85%;
+      margin: 40px auto;
+    }
+  </style>
 </head>
 
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light"
      style="background-color:darkturquoise; height:1in;">
-    <div class="container-fluid">
-        <h2 style="padding-right:5%;">Dealerships</h2>
+  <div class="container-fluid">
+    <h2 style="padding-right:5%;">Dealerships</h2>
 
-        <button class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarText">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <button class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarText">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-                <li class="nav-item">
-                    <a class="nav-link"
-                       style="font-size: larger;"
-                       href="/">Home</a>
-                </li>
+        <li class="nav-item">
+          <a class="nav-link" style="font-size: larger;" href="/">Home</a>
+        </li>
 
-                <li class="nav-item">
-                    <a class="nav-link"
-                       style="font-size: larger;"
-                       href="/about">About Us</a>
-                </li>
+        <li class="nav-item">
+          <a class="nav-link" style="font-size: larger;" href="/about">About Us</a>
+        </li>
 
-                <li class="nav-item">
-                    <a class="nav-link active"
-                       style="font-size: larger;"
-                       href="/contact">Contact Us</a>
-                </li>
+        <li class="nav-item">
+          <a class="nav-link active"
+             style="font-size: larger; text-decoration: underline;"
+             href="/contact">Contact Us</a>
+        </li>
 
-            </ul>
-        </div>
+      </ul>
+
+      <span class="navbar-text">
+        <a class="nav-link" style="font-size: larger; display:inline;" href="/login">Login</a>
+        <a class="nav-link" style="font-size: larger; display:inline; margin-left:30px;" href="/register">Register</a>
+      </span>
     </div>
+  </div>
 </nav>
 
-<div class="contact-container">
-    <div class="contact-card">
+<div class="contact-hero">
+  <div class="hero-box">
+    <h1>Contact Us</h1>
+    <p>
+      We're here to help. Reach out to us for questions, feedback,
+      or dealership partnership opportunities.
+    </p>
+  </div>
+</div>
 
-        <div class="contact-header">
-            <h1>Contact Us</h1>
-            <p>
-                We'd love to hear from you. Whether you have questions,
-                feedback, or dealership inquiries, our team is here to help.
-            </p>
-        </div>
+<div class="contact-section">
+  <h2 class="section-title">Get in Touch</h2>
+  <p>
+    Have a question or need assistance? Our team is ready to assist you.
+    Choose the best way to reach us.
+  </p>
 
-        <div class="contact-info">
-            <p>
-                <strong>Best Cars Dealership Reviews</strong>
-            </p>
+  <div class="info-row">
 
-            <p>
-                <strong>Address:</strong><br>
-                500 Market Street<br>
-                Chicago, IL 60601<br>
-                United States
-            </p>
-
-            <p>
-                <strong>Phone:</strong><br>
-                +1 (312) 555-0199
-            </p>
-
-            <p>
-                <strong>Email:</strong><br>
-                support@bestcarsreviews.com
-            </p>
-
-            <p>
-                <strong>Business Hours:</strong><br>
-                Monday - Friday: 8:00 AM - 6:00 PM<br>
-                Saturday: 9:00 AM - 4:00 PM<br>
-                Sunday: Closed
-            </p>
-        </div>
-
+    <div class="info-box">
+      <div class="info-icon">📍</div>
+      <h4>Address</h4>
+      <p>
+        500 Market Street<br>
+        Chicago, IL 60601<br>
+        United States
+      </p>
     </div>
+
+    <div class="info-box">
+      <div class="info-icon">☎</div>
+      <h4>Phone</h4>
+      <p>
+        +1 (312) 555-0199<br>
+        Mon - Fri, 8:00 AM - 6:00 PM
+      </p>
+    </div>
+
+    <div class="info-box">
+      <div class="info-icon">✉</div>
+      <h4>Email</h4>
+      <p>
+        support@bestcarsreviews.com<br>
+        We respond within 24 hours.
+      </p>
+    </div>
+
+    <div class="info-box">
+      <div class="info-icon">⏰</div>
+      <h4>Business Hours</h4>
+      <p>
+        Monday - Friday: 8:00 AM - 6:00 PM<br>
+        Saturday: 9:00 AM - 4:00 PM<br>
+        Sunday: Closed
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="contact-section">
+  <h2 class="section-title">Contact Person</h2>
+
+  <div class="person-card">
+    <img src="/static/contact-person.png" alt="Contact person">
+
+    <div class="person-details">
+      <h3>Michael Anderson</h3>
+      <h5>Customer Relations Manager</h5>
+
+      <p>
+        Michael is your go-to person for questions, feedback, and partnership
+        inquiries. He ensures that every customer receives clear support and
+        accurate dealership information.
+      </p>
+
+      <p><strong>Email:</strong> michael.anderson@bestcarsreviews.com</p>
+      <p><strong>Phone:</strong> +1 (312) 555-0147</p>
+    </div>
+  </div>
 </div>
 
 </body>
