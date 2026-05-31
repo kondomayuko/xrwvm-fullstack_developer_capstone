@@ -53,7 +53,12 @@ jobs:
       - name: Run JavaScript Linter
         run: |
           if [ -d "./server/database" ]; then
-            find ./server/database -type f -name "*.js" -exec jshint {} +
+            find ./server/database -type f -name "*.js" -exec jshint --config /dev/stdin {} + <<'EOF'
+          {
+            "esversion": 8,
+            "asi": true
+          }
+          EOF
           else
             echo "Directory ./server/database not found. Skipping JavaScript linting."
           fi
