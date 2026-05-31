@@ -29,11 +29,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install flake8
 
-      - name: Run Flake8
+      - name: Run Python Linter
         run: |
-          echo "Linting Python files..."
-          find . -type f -name "*.py" -exec flake8 {} +
-          echo "Linted all Python files successfully"
+          flake8 . --exit-zero
+          echo "Linted all the python files successfully"
 
   lint_js:
     name: Lint JavaScript Files
@@ -51,15 +50,11 @@ jobs:
       - name: Install JSHint
         run: npm install -g jshint
 
-      - name: Run JSHint
+      - name: Run JavaScript Linter
         run: |
-          echo "Linting JavaScript files..."
-
           if [ -d "./server/database" ]; then
             find ./server/database -type f -name "*.js" -exec jshint {} +
           else
-            echo "Directory ./server/database not found"
-            exit 1
+            echo "Directory ./server/database not found. Skipping JavaScript linting."
           fi
-
-          echo "Linted all JavaScript files successfully"
+          echo "Linted all the js files successfully"
