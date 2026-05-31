@@ -56,7 +56,8 @@ jobs:
             find ./server/database -type f -name "*.js" -exec jshint --config /dev/stdin {} + <<'EOF'
           {
             "esversion": 8,
-            "asi": true
+            "asi": true,
+            "sub": true
           }
           EOF
           else
